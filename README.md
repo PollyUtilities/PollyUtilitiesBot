@@ -16,7 +16,7 @@ If you need any help join the discord server
 2. Create an application
 3. Create a bot and enable all intents
 4. Copy its token
-5. Open OAuth2>URL enerator
+5. Open OAuth2>URL generator
 6. Select the scopes `bot` and `application.commands`
 7. Select all the permissions you will use.
 8. Copy the link and use it to invite to your server

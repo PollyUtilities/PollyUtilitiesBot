@@ -20,3 +20,6 @@ If you need any help join the discord server
 6. Select the scopes `bot` and `application.commands`
 7. Select all the permissions you will use.
 8. Copy the link and use it to invite to your server
+
+# Hosted Bot
+For the hosted bot click [here](https://discord.com/api/oauth2/authorize?client_id=1075352840270262322&permissions=8&scope=bot%20applications.commands)

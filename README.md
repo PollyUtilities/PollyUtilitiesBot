@@ -8,6 +8,7 @@ A multipurpose discord bot written in Python using disnake
 
 # Help
 If you need any help join the discord server
+
 [<img src = "https://discordapp.com/api/guilds/1057645709454749727/widget.png?style=banner2">](https://discord.gg/pSdQQEuCEV)
 
 # Creating a bot

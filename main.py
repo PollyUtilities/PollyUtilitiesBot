@@ -647,6 +647,34 @@ async def on_member_remove(member):
 async def nick(inter, user: disnake.Member, name: str):
     await user.edit(nick=name)
     await inter.response.send_message(f"Changed {user.mention}'s nickname to {name}", ephemeral=True)
+    
+@bot.command()
+@commands.has_permissions(moderate_members=True)
+async def countingchannel(ctx):
+    with open("counting.json", "r") as f:
+        countingjson = json.load(f)
+    countingjson[str(ctx.guild.id)] = {}
+    countingjson[str(ctx.guild.id)]["channel"] = str(ctx.channel.id)
+    countingjson[str(ctx.guild.id)]["count"] = 1
+    with open("counting.json", "w") as f:
+        json.dump(countingjson, f)
+    await ctx.send(f"Set counting channel to {ctx.channel.mention}\nThe next number is **1**")
+    
+@bot.command()
+async def count(ctx):
+    with open("counting.json", "r") as f:
+        countingjson = json.load(f)
+    count = countingjson[str(ctx.guild.id)]["count"]
+    await ctx.send(f"Next number is {count}")
+@bot.command()
+@commands.has_permissions(administrator=True)
+async def setcount(ctx, count: int):
+    with open("count.json", "r") as f:
+        countingjson = json.load(f)
+    countingjson[str(ctx.guild.id)]["count"] = count
+    with open("count.json", "w") as f:
+        json.dump(countingjson, f)
+
 
 if TOKEN == "INSERT TOKEN HERE":
     print("Please edit main.py and replace INSERT TOKEN HERE with your token")
